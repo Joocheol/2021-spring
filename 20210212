@@ -1,0 +1,36 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds, matrix, positioning, shapes.misc}
+
+
+\begin{document}    
+
+
+
+\begin{tikzpicture}[
+  mycircle/.style={
+  circle,
+  draw=black!50,
+  very thick,
+  minimum size=10mm,
+  },
+  myrect/.style={
+  rectangle,
+  rounded corners=3mm,
+  minimum height=5cm,
+  minimum width=1cm,
+  draw,
+  },
+]
+
+\node[mycircle] (x) {$x$};
+
+\node[myrect, above=of x] (cell) {};
+
+\node[mycircle, above=of cell] (y) {$\hat{y}$};
+
+
+\path (x) edge[->] (cell);
+\path (cell) edge[->] (y);
+
+\end{tikzpicture}
